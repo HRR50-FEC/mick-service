@@ -9,29 +9,30 @@ const Promise = require('bluebird')
 
 const queries = ['table', 'spoon', 'mug', 'fork', 'clock', 'painting', 'headphones', 'pen', 'pencil', 'marker', 'suitcase', 'purse', 'wallet', 'yarn', 'collar', 'paintbursh', 'necklace', 'earring', 'chapstick', 'charger', 'makeup', 'keyboard']
 
-
+//run this for each query
 queries.forEach(query => {
-  seed = []
+  //get request to api using token and query
   axios.get(`https://api.unsplash.com/search/photos?client_id=${c.unsplash}&query=${query}&per_page=120&page=1`)
     .then(result => {
-      //console.log(result.length);
+      //create a 30 image list from the data per query
       let items = result.data.results.slice()
-      //console.log(items.length);
-
       if (items.length < 30) {
         while (items.length < 30) {
           items[items.length] = items[0]
         }
       }
+      //create packets of 6 images each
       for (var i = 0; i < 6; i++) {
         let index = i * 6;
         let package = items.slice(index, index + 6).map(image => {
           return { "raw": image.urls.raw, "full": image.urls.full, "regular": image.urls.regular, "small": image.urls.small, "thumb": image.urls.thumb }
         })
+        //ad to DB
         if (package.length > 0) {
           listing.addListing({ imageURLs: package })
         }
       }
+      //this is an extra function that i used to create a backup of the data on my machine outside of mongoDB
       // fs.writeFile(`./datastore/${query}.txt`, JSON.stringify(items), (err) => {
       //   if (err) throw err;
       //   console.log('The file has been saved!');
@@ -43,14 +44,4 @@ queries.forEach(query => {
 
 
 
-
-// const seedDB = function () {
-//   listing.create(samplePosts)
-//     .then(() => db.disconnect());
-// };
-
-//seedDB();
-
-
-// listing.addListing({ imageURLs: [{ raw: "test", full: "test", regular: "test", small: "test", thumb: "test" }, { "raw": "HELLO", "full": "HELLO", "regular": "HELLO", "small": "HELLO", "thumb": "HELLO" }] })
 
