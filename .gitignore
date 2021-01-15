@@ -26,3 +26,4 @@ dist/
 
 config.js
 
+/datastore
