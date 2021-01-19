@@ -1,0 +1,19 @@
+.side-list-item {
+  height: 60px;
+  width: 60px;
+}
+
+.carousel-main {
+  display: flex;
+  flex-direction: row;
+  height: 450px;
+  width: 35%;
+}
+
+.featured-image {
+  height: 100%;
+}
+
+.feature-box {
+  text-align: center;
+}
