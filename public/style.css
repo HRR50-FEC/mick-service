@@ -1,19 +1,31 @@
 .side-list-item {
   height: 60px;
   width: 60px;
+  border-radius: 10px;
 }
 
 .carousel-main {
   display: flex;
   flex-direction: row;
   height: 450px;
-  width: 35%;
+  width: 75%;
 }
 
 .featured-image {
   height: 100%;
+  border-radius: 10px;
+  justify-content: center;
 }
 
-.feature-box {
-  text-align: center;
+
+.left {
+  position: relative;
+  margin-left: 5%;
+  float: left;
+}
+
+.right {
+  position: relative;
+  margin-right: 5%;
+  float: right;
 }

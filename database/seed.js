@@ -7,7 +7,7 @@ const sample = require('./sampleData')
 const test = sample.sample
 const Promise = require('bluebird')
 
-const queries = ['table', 'spoon', 'mug', 'fork', 'clock', 'painting', 'headphones', 'pen', 'pencil', 'marker', 'suitcase', 'purse', 'wallet', 'yarn', 'collar', 'paintbursh', 'necklace', 'earring', 'chapstick', 'charger', 'makeup', 'keyboard']
+const queries = ['table', 'spoon', 'mug', 'fork', 'clock', 'painting', 'headphones', 'pen', 'pencil', 'marker', 'suitcase', 'purse', 'wallet', 'yarn', 'knitting', 'paintbursh', 'books', 'earring', 'chapstick', 'board game', 'makeup', 'keyboard']
 
 //run this for each query
 queries.forEach(query => {
