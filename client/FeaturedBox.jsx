@@ -12,30 +12,46 @@ const Featuredbox = (props) => {
   }
 
   const Featured = styled.div`
+  display: flex;
   padding-left: 20px;
-  width: 75%;
+  width: 650px;
+  text-align: center;
   align-items: center;
   justify-content: center;
 `
   const ButtonBox = styled.div`
-  width: 100%;
-  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  width: 650px;
+  position: absolute;
+  z-index: 1;
   `
 
+
   const NavButton = styled.button`
+  background: #FFFFFF;
+  cursor: pointer;
+  border: none;
+  justify-content: space-between;
   height: 48px;
   width: 48px;
   border-radius: 24px;
+  box-shadow: 0px 8px 15px rgba(34, 34, 34, 0.15);
+}
+
+;
   `
 
   return (
     <Featured>
       <img src={image} className="featured-image" />
       <ButtonBox>
-        <NavButton className="left" name="previous" onClick={props.arrow}>{"<"}</NavButton>
-        <NavButton className="right" name="previous" onClick={props.arrow}>{">"}</NavButton>
+        <div>
+          <NavButton className="left" name="previous" onClick={props.arrow}>{"<"}</NavButton>
+        </div>
+        <div>
+          <NavButton className="right" name="next" onClick={props.arrow}>{">"}</NavButton>
+        </div>
       </ButtonBox>
     </Featured >
   )

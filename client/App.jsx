@@ -55,8 +55,14 @@ class App extends React.Component {
     return (
       <div>
         <div className="carousel-main">
-          <SideList list={this.state.test} click={this.handleThumbClick.bind(this)} />
-          <Featuredbox image={this.state.selected} arrow={this.handleArrowClick.bind(this)} />
+          <SideList
+            list={this.state.test}
+            click={this.handleThumbClick.bind(this)}
+            selected={this.state.selected}
+          />
+          <Featuredbox
+            image={this.state.selected}
+            arrow={this.handleArrowClick.bind(this)} />
         </div>
       </div>
     )
