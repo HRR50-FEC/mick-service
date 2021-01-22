@@ -1,15 +1,17 @@
 import React from 'react';
 import faker from 'faker';
 import axios from 'axios';
-import SideList from './SideList.jsx'
-import Featuredbox from './Featuredbox.jsx'
+import SideList from './SideList.jsx';
+import Featuredbox from './Featuredbox.jsx';
+import ExpandedView from './ExpandedView.jsx'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       test: [],
-      selected: null
+      selected: null,
+      expanded: false,
     }
   }
 
@@ -34,11 +36,25 @@ class App extends React.Component {
 
   }
 
-  handleThumbClick(event) {
-    const name = event.target.name;
+  handleThumbClick(val) {
     this.setState({
-      selected: { place: Number(name), image: this.state.test[Number(name)] }
+      selected: { place: val, image: this.state.test[val] }
     })
+  }
+
+  handleFeatureClick() {
+    this.setState({
+      expanded: true,
+    })
+  }
+
+  handleScreenClick(event) {
+    let id = event.target.id;
+    if (id === "screen") {
+      this.setState({
+        expanded: false
+      })
+    }
   }
 
   componentDidMount() {
@@ -54,6 +70,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        {(this.state.expanded === true)
+          ? <ExpandedView
+            test={this.state.test}
+            image={this.state.selected}
+            arrow={this.handleArrowClick}
+            screen={this.handleScreenClick.bind(this)}
+            thumbclick={this.handleThumbClick}
+          />
+          : null}
         <div className="carousel-main">
           <SideList
             list={this.state.test}
@@ -62,7 +87,9 @@ class App extends React.Component {
           />
           <Featuredbox
             image={this.state.selected}
-            arrow={this.handleArrowClick.bind(this)} />
+            arrow={this.handleArrowClick.bind(this)}
+            click={this.handleFeatureClick.bind(this)}
+          />
         </div>
       </div>
     )

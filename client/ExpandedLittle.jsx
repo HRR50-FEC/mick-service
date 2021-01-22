@@ -2,13 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Thumb = styled.div`
-height: 60px;
-width: 60px;
+height: 108px;
+width: 108px;
 border-radius: 10px;
-opacity: 0.65;
-&:hover {
-  opacity: 0.85;
-};
 justify-content: center;
 align-items: center;
 background: url(${props => props.image});
@@ -17,11 +13,12 @@ background-position: center;
 cursor: pointer;
 `
 const Selected = styled.div`
-height: 60px;
-width: 60px;
+height: 108px;
+width: 108px;
 border: solid;
 border-weight: 1px;
 border-radius: 10px;
+border-color: #FFFFFF;
 justify-content: center;
 align-items: center;
 background: url(${props => props.image});
@@ -30,29 +27,38 @@ background-position: center;
 cursor: pointer;
 `
 
-const SideListItem = (props) => {
+const LittleContainer = styled.div`
+margin: 2.5px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 115px;
+width: 115px;
+`
+
+const ExpandedLittle = (props) => {
 
 
   if (props.image === props.selected.image.thumb) {
     return (
-      <div className="thumb-container" >
+      <LittleContainer>
         <Selected
           image={props.image}
           onClick={() => { props.click(Number(props.place)) }}
         />
-      </div>
+      </LittleContainer>
     )
   } else {
     return (
-      <div className="thumb-container">
+      <LittleContainer>
         <Thumb
           image={props.image}
           onClick={() => { props.click(Number(props.place)) }}
         />
-      </div>
+      </LittleContainer>
     )
 
   }
 }
 
-export default SideListItem;
+export default ExpandedLittle;
