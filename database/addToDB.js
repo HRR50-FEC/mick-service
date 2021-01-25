@@ -2,7 +2,7 @@ const fs = require('fs')
 const fsPromises = fs.promises;
 const listing = require('./schema.js');
 
-const queries = ['table', 'spoon', 'mug', 'fork', 'clock', 'painting', 'headphones', 'pen', 'pencil', 'marker', 'suitcase', 'purse', 'wallet', 'yarn', 'collar', 'necklace', 'earring', 'charger', 'makeup', 'keyboard']
+const queries = ['table', 'spoon', 'mug', 'fork', 'clock', 'painting', 'headphones', 'pen', 'pencil', 'marker', 'suitcase', 'purse', 'wallet', 'yarn', 'knitting', 'paintbursh', 'books', 'earring', 'chapstick', 'board game', 'makeup', 'keyboard']
 
 
 queries.forEach(query => {

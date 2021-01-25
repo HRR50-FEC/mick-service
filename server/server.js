@@ -9,6 +9,12 @@ app.use(express.static('public'));
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
+app.get('/listing', (req, res) => {
+  listings.getRandom(item => {
+    res.json(item)
+  })
+})
+
 app.listen(port, () => {
   console.log(`You are now listening to ${port} radio`)
 })

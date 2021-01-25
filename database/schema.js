@@ -19,8 +19,16 @@ const addListing = (objArr) => {
   listings.create(objArr).then(() => console.log('added'))
 }
 
+const getRandom = (cb) => {
+  listings.aggregate([{ $sample: { size: 1 } }])
+    .then(result => {
+      cb(result)
+    })
+}
+
 
 
 module.exports = listing;
 module.exports.addListing = addListing;
+module.exports.getRandom = getRandom;
 
