@@ -10,6 +10,8 @@ display: flex;
 flex-direction: column;
 overflow: scroll;
 width: 250px;
+margin-left: 30px;
+margin-top: 50px;
 `
 
 const Little = styled.div`

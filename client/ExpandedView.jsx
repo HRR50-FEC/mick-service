@@ -11,7 +11,10 @@ background: rgba(63, 63, 63, 0.9);
 width: 100%;
 height: 100%;
 z-index: 3;
+justify-content: center;
+
 `
+
 
 class ExpandedView extends React.Component {
   constructor(props) {
@@ -21,7 +24,8 @@ class ExpandedView extends React.Component {
       test: props.test,
       arrow: props.arrow,
       clickScreen: props.screen,
-      thumbclick: props.thumbclick
+      thumbclick: props.thumbclick,
+      zoom: false
     }
   }
 
