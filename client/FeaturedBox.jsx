@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const Featured = styled.div`
 display: flex;
@@ -8,7 +8,19 @@ width: 650px;
 text-align: center;
 align-items: center;
 justify-content: center;
+cursor: nesw-resize;
 `
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
 const ButtonBox = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
@@ -37,6 +49,11 @@ max-width: 650px;
 border-radius: 10px;
 justify-content: center;
 text-align: center;
+opacity: 1;
+animation-name: fadeIn;
+animation-iteration-count: 1;
+animation-timing-function: ease-in;
+animation-duration: 1s;
 `
 const Featuredbox = (props) => {
 
