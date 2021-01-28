@@ -12,6 +12,7 @@ overflow: scroll;
 width: 250px;
 margin-left: 30px;
 margin-top: 50px;
+height: 100%;
 `
 
 const Little = styled.div`
