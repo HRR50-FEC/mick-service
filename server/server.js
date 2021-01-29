@@ -2,10 +2,16 @@ const express = require('express');
 const bp = require('body-parser');
 const port = 3333;
 const listings = require('../database/schema.js');
+const cors = require('cors');
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(cors({
+  origin: 'http://localhost:1111'
+}));
+app.use('/', express.static('public'));
+app.use('/bundle', express.static('public/main.js'));
+app.use('/css', express.static('public/style.css'))
 app.use(bp.json());
 app.use(bp.urlencoded({ extended: true }));
 
