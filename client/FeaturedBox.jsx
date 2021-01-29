@@ -50,10 +50,7 @@ border-radius: 10px;
 justify-content: center;
 text-align: center;
 opacity: 1;
-animation-name: fadeIn;
-animation-iteration-count: 1;
-animation-timing-function: ease-in;
-animation-duration: 1s;
+animation:
 `
 const Featuredbox = (props) => {
 
