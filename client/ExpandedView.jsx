@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Featuredbox from './Featuredbox.jsx';
+import Featuredbox from './FeaturedBox.jsx';
 import ExpandedSide from './ExpandedSide.jsx';
 import ZoomBox from './ZoomBox.jsx';
 
