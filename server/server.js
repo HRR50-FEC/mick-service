@@ -6,9 +6,7 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors({
-  origin: 'http://localhost:1111'
-}));
+app.use(cors());
 app.use('/', express.static('public'));
 app.use('/bundle', express.static('public/main.js'));
 app.use('/css', express.static('public/style.css'))
