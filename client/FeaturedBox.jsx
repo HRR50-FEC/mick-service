@@ -43,14 +43,15 @@ box-shadow: 0px 8px 15px rgba(34, 34, 34, 0.15);
 const FeaturedImage = styled.img`
 position: relative;
 z-index: 1;
-height: 100%;
+width: 650;
+object-fit: cover;
 max-height: 450px;
 max-width: 650px;
 border-radius: 10px;
 justify-content: center;
 text-align: center;
 opacity: 1;
-animation:
+
 `
 const Featuredbox = (props) => {
 
