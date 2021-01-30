@@ -2,7 +2,7 @@ import React from 'react';
 import faker from 'faker';
 import axios from 'axios';
 import SideList from './SideList.jsx';
-import Featuredbox from './Featuredbox.jsx';
+import Featuredbox from './FeaturedBox.jsx';
 import ExpandedView from './ExpandedView.jsx'
 
 class App extends React.Component {
